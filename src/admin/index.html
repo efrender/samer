@@ -1,0 +1,268 @@
+ <!DOCTYPE html>
+ <html lang="en"> 
+ <head>
+     <meta charset="utf-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+     <title>Administrador citas</title>
+     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+         name='viewport' />
+     <!--     Fonts and icons     -->
+     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+     <!-- CSS Files -->
+     
+     
+     <!-- CSS Just for demo purpose, don't include it in your project -->
+     
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.29/dist/sweetalert2.all.min.js" type="module" ></script>
+    
+   <script type="module" crossorigin src="/assets/admin.2de9d411.js"></script>
+   <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill.c7c6310f.js">
+   <link rel="modulepreload" crossorigin href="/assets/firebase.3e506a52.js">
+   <link rel="stylesheet" href="/assets/index.0fcbf359.css">
+ </head>
+ 
+ <body>
+     <div class="wrapper">
+         <div class="sidebar" data-image="./src/assets/img/sidebar-dental.jpg" data-color="blue">
+             <!--
+          Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+  
+          Tip 2: you can also add an image using data-image tag
+      -->
+             <!--SIDEBAR-->
+             <div class="sidebar-wrapper">
+                 <div class="logo">
+                     <a class="simple-text logo-mini">CC</a>
+                     <a href="#" class="simple-text logo-normal">
+                         Control Citas
+                     </a>
+                 </div>
+                 <!--USER-SIDEBAR-->
+                 <div class="user">
+                     <div class="photo">
+                         <img src="/assets/andrea-face.2b61f147.jpg" />
+                     </div>
+                     <div class="info ">
+                         <a data-toggle="collapse" href="#collapseUser" class="collapsed">
+                             <span>Dra. Andrea Amaya
+                                 <b class="caret"></b>
+                             </span>
+                         </a>
+                         <div class="collapse" id="collapseUser">
+                             <ul class="nav">
+                                 <li>
+                                     <a class="profile-dropdown" href="#">
+                                         <span class="sidebar-mini">MP</span>
+                                         <span class="sidebar-normal">Mi perfil</span>
+                                     </a>
+                                 </li>
+                                 <li>
+                                     <a class="profile-dropdown" href="#">
+                                         <span class="sidebar-mini">EP</span>
+                                         <span class="sidebar-normal">Edit Profile</span>
+                                     </a>
+                                 </li>
+                                 <li>
+                                     <a class="profile-dropdown" href="#">
+                                         <span class="sidebar-mini">S</span>
+                                         <span class="sidebar-normal">Settings</span>
+                                     </a>
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+                 <!--USER-SIDEBAR-->
+                 <ul class="nav">
+                     <li class="nav-item">
+                       <li class="nav-item active">
+                         <a class="nav-link" href="/citas/index.html">
+                             <i class="nc-icon nc-chart-pie-35"></i>
+                             <p>Home</p>
+                         </a>
+                       </li>
+                     </li>
+                     <!--SIDEBAR ITEM PACIENTES-->
+                     <li class="nav-item">
+                         <a class="nav-link" data-toggle="collapse" href="#pacientes">
+                             <i class="nc-icon nc-single-02"></i>
+                             <p>
+                                 Pacientes
+                                 <b class="caret"></b>
+                             </p>
+                         </a>                
+                         <div class="collapse " id="pacientes">
+                             <ul class="nav">
+                                 <li class="nav-item ">
+                                     <a class="nav-link" href="./#/pacientes">
+                                         <span class="sidebar-mini">P</span>
+                                         <span class="sidebar-normal">Pacientes</span>
+                                     </a>
+                                 </li> 
+                                 <li class="nav-item ">
+                                     <a class="nav-link" href="./#/agregar">
+                                         <span class="sidebar-mini">A</span>
+                                         <span class="sidebar-normal">Agregar</span>
+                                     </a>
+                                 </li>
+                             </ul>
+                         </div>
+                     </li>
+                     <!--SIDEBAR ITEM CITAS-->
+                     <li class="nav-item">
+                         <a class="nav-link" data-toggle="collapse" href="#citas">
+                             <i class="nc-icon nc-notes"></i>
+                             <p>
+                                 Citas
+                                 <b class="caret"></b>
+                             </p>
+                         </a>                
+                         <div class="collapse " id="citas">
+                             <ul class="nav">
+                                 <li class="nav-item ">
+                                     <a class="nav-link" href="./#/lista">
+                                         <span class="sidebar-mini">L</span>
+                                         <span class="sidebar-normal">Lista</span>
+                                     </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                     <a class="nav-link" href="./#/nueva-cita">
+                                         <span class="sidebar-mini">N</span>
+                                         <span class="sidebar-normal">Nueva</span>
+                                     </a>
+                                 </li>
+                             </ul>
+                         </div>
+                     </li>
+                     <!--SIDEBAR ITEM PAGOS-->
+                     <li class="nav-item">
+                         <a class="nav-link" data-toggle="collapse" href="#pagos">
+                             <i class="nc-icon nc-money-coins"></i>
+                             <p>
+                                 Pagos
+                                 <b class="caret"></b>
+                             </p>
+                         </a>                
+                         <div class="collapse " id="pagos">
+                             <ul class="nav">
+                                 <li class="nav-item ">
+                                     <a class="nav-link" href="./#/pagos">
+                                         <span class="sidebar-mini">C</span>
+                                         <span class="sidebar-normal">Confirmar</span>
+                                     </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                     <a class="nav-link" href="#">
+                                         <span class="sidebar-mini">B</span>
+                                         <span class="sidebar-normal">Buscar</span>
+                                     </a>
+                                 </li>
+                             </ul>
+                         </div>
+                     </li>
+                     <!--SIDEBAR ITEM CONFIGURACION-->
+                     <li class="nav-item">
+                         <a class="nav-link" data-toggle="collapse" href="#configuracion">
+                             <i class="nc-icon nc-settings-gear-64"></i>
+                             <p>
+                                 Configuración
+                                 <b class="caret"></b>
+                             </p>
+                         </a>                
+                         <div class="collapse " id="configuracion">
+                             <ul class="nav">
+                                 <li class="nav-item ">
+                                     <a class="nav-link" href="#">
+                                         <span class="sidebar-mini">H</span>
+                                         <span class="sidebar-normal">Horario</span>
+                                     </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                     <a class="nav-link" href="#">
+                                         <span class="sidebar-mini">P</span>
+                                         <span class="sidebar-normal">Precios</span>
+                                     </a>
+                                 </li>
+                             </ul>
+                         </div>
+                     </li>
+                 </ul>
+             </div>
+         </div>
+         <!--SIDEBAR-->
+         <div class="main-panel">
+             <!-- Navbar -->
+             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+                 <div class="container-fluid">
+                     <a class="navbar-brand" href="#" id="title-dashboard"></a>
+                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                         aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-bar burger-lines"></span>
+                         <span class="navbar-toggler-bar burger-lines"></span>
+                         <span class="navbar-toggler-bar burger-lines"></span>
+                     </button>
+                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                         <ul class="nav navbar-nav mr-auto">                            
+                             <li class="dropdown nav-item">
+                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                     <i class="nc-icon nc-planet"></i>
+                                     <span class="notification">5</span>
+                                     <span class="d-lg-none">Notification</span>
+                                 </a>
+                                 <ul class="dropdown-menu">
+                                     <a class="dropdown-item" href="#">Notification 1</a>
+                                     <a class="dropdown-item" href="#">Notification 2</a>
+                                     <a class="dropdown-item" href="#">Notification 3</a>
+                                     <a class="dropdown-item" href="#">Notification 4</a>
+                                     <a class="dropdown-item" href="#">Another notification</a>
+                                 </ul>
+                             </li>        
+                         </ul>
+                         <ul class="navbar-nav ml-auto">
+                             <li class="nav-item">
+                                 <a class="nav-link" href="#">
+                                     <span class="no-icon">Salir</span>
+                                 </a>
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
+             </nav>
+             <!-- End Navbar -->
+             <!--CONTENT-->
+             <div class="modalDiv"></div>
+             <div class="content">
+                 <div class="container-fluid" id="main-container">
+ 
+                 </div>
+             </div>
+             <!--CONTENT-->
+             <footer class="footer">
+                 <div class="container-fluid">
+ 
+                 </div>
+             </footer>
+         </div>
+     </div>
+ </body>
+ <!--   Core JS Files   -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!--  Chartist Plugin  -->
+ 
+ <!--  Notifications Plugin    -->
+ 
+ <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
+ 
+ <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
+ 
+ 
+ 
+ </html>
+<!---->
